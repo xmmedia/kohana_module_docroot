@@ -1,24 +1,23 @@
 .tree, .tree ul { list-style: none; margin: 0; padding: 0; }
-.tree li { width: 100%; overflow: auto; /*border-bottom: 1px solid #e6e6e6;*/ }
-.tree li.has_children { padding-bottom: 0; }
+.tree li { width: 100%; overflow: auto; border-bottom: 1px solid #e6e6e6; padding: 0 0 0 5px; }
+.tree li > div { width: 100%; overflow: auto; }
+.tree li ul li:last-child { border-bottom: none; }
 .tree li.has_children ul { display: none; }
-/*.tree li:hover { background-color: #e6efff; }*/
-.tree li > a { float: left; padding: 5px 5px 5px 0; }
+.tree li > div { padding-top: 5px; }
+.tree li:hover > div { background-color: #e6efff; }
+.tree li > div > a { float: left; padding: 5px 5px 5px 0; }
 .tree li .name { display: inline-block; float: left; padding-bottom: 5px; }
 .tree li ul { padding-left: 10px; padding-right: 0; margin-right: 5px; }
-.tree li { /*border-bottom: none;*/ padding: 5px 0 5px 5px; }
+.tree .links { float: right; padding-right: 5px; }
+.tree .links a { margin-right: 5px; }
 
 .tree .expand, .tree .collapse, .tree .no_expand {
 	background: no-repeat top left;
 	text-decoration: none; /* for when used as a link */
 	width: 12px;
 	height: 12px;
-	/*padding-left: 20px;
-	padding-bottom: 2px;*/
 	border: none;
 }
 .tree .expand { background-image: url(/xm/images/tree_plus.gif); }
 .tree .collapse { background-image: url(/xm/images/tree_minus.gif); }
 .tree .no_expand { cursor: default; }
-
-.tree .links { float: right; padding-right: 5px; }
