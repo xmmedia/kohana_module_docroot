@@ -23,6 +23,10 @@ $(function() {
 		}
 	});
 
+	$tree.delegate('.no_expand', 'click', function(e) {
+		e.preventDefault();
+	});
+
 	$tree.delegate('.edit_item', 'click', function(e) {
 		e.preventDefault();
 
