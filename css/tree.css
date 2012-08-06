@@ -21,3 +21,5 @@
 .tree .expand { background-image: url(/xm/images/tree_plus.gif); }
 .tree .collapse { background-image: url(/xm/images/tree_minus.gif); }
 .tree .no_expand { cursor: default; }
+
+.tree_actions a { margin-right: 10px; text-decoration: none; }
