@@ -42,7 +42,29 @@ $(function() {
 	$tree.delegate('.delete_item', 'click', function(e) {
 		e.preventDefault();
 
-		var $dialog = open_dialog('Delete Item', $(this).attr('href'));
+		var $dialog = open_dialog('Delete Item');
+
+		$.getJSON($(this).attr('href'), function(return_data) {
+			if (cl4.process_ajax(return_data)) {
+				$dialog.html(return_data.html)
+					.find('input:visible:eq(0)').focus();
+				$dialog.find('input[name="delete_confirm"][value="No"]').click(function() {
+					$('#tree_dialog').dialog('close');
+				});
+				$dialog.dialog('option', {
+					buttons : {
+						Close : function() {
+							$(this).dialog('close');
+						}
+					}
+				});
+			// validation error or html was returned
+			} else if (return_data.status == 6 || typeof return_data.html != 'undefined') {
+				$dialog.html(return_data.html);
+			} else {
+				$dialog.html('An error occurred. Please try again.');
+			}
+		});
 	});
 
 	$('.expand_all').click(function(e) {

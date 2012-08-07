@@ -9,7 +9,7 @@
 .tree li .name { display: inline-block; float: left; padding-bottom: 5px; }
 .tree li ul { padding-left: 10px; padding-right: 0; margin-right: 5px; }
 .tree .links { float: right; padding-right: 5px; }
-.tree .links a { margin-right: 5px; }
+.tree .links a { margin-right: 5px; padding-right: 2px; }
 
 .tree .expand, .tree .collapse, .tree .no_expand {
 	background: no-repeat top left;
@@ -22,4 +22,5 @@
 .tree .collapse { background-image: url(/xm/images/tree_minus.gif); }
 .tree .no_expand { cursor: default; }
 
+.tree_actions { margin-bottom: 10px; }
 .tree_actions a { margin-right: 10px; text-decoration: none; }
