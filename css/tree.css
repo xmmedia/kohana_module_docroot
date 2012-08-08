@@ -13,7 +13,7 @@
 
 .tree .expand, .tree .collapse, .tree .no_expand {
 	background: no-repeat top left;
-	text-decoration: none; /* for when used as a link */
+	text-decoration: none;
 	width: 12px;
 	height: 12px;
 	border: none;

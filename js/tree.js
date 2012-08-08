@@ -1,10 +1,12 @@
+var tree = {};
+
 $(function() {
 	var $tree = $('.tree');
 
 	$('.add_item').click(function(e) {
 		e.preventDefault();
 
-		var $dialog = open_dialog('Add Item', $(this).attr('href'));
+		var $dialog = tree.open_dialog('Add Item', $(this).attr('href'));
 	});
 
 	$tree.delegate('.expand, .collapse', 'click', function(e) {
@@ -45,19 +47,19 @@ $(function() {
 	$tree.delegate('.edit_item', 'click', function(e) {
 		e.preventDefault();
 
-		var $dialog = open_dialog('Edit Item', $(this).attr('href'));
+		var $dialog = tree.open_dialog('Edit Item', $(this).attr('href'));
 	});
 
 	$tree.delegate('.add_sub_item', 'click', function(e) {
 		e.preventDefault();
 
-		var $dialog = open_dialog('Add Sub Item', $(this).attr('href'));
+		var $dialog = tree.open_dialog('Add Sub Item', $(this).attr('href'));
 	});
 
 	$tree.delegate('.delete_item', 'click', function(e) {
 		e.preventDefault();
 
-		var $dialog = open_dialog('Delete Item');
+		var $dialog = tree.open_dialog('Delete Item');
 
 		$.getJSON($(this).attr('href'), function(return_data) {
 			if (cl4.process_ajax(return_data)) {
@@ -120,7 +122,7 @@ $(function() {
 	}, 10);
 });
 
-var open_dialog = function(title, href) {
+var tree.open_dialog = function(title, href) {
 	$dialog = $('#tree_dialog').dialog({
 		title : title,
 		autoOpen : true,
