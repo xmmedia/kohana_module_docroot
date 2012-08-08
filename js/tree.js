@@ -122,7 +122,7 @@ $(function() {
 	}, 10);
 });
 
-var tree.open_dialog = function(title, href) {
+tree.open_dialog = function(title, href) {
 	$dialog = $('#tree_dialog').dialog({
 		title : title,
 		autoOpen : true,
