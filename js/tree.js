@@ -12,15 +12,30 @@ $(function() {
 
 		var $link = $(this),
 			expand = $link.hasClass('expand'),
-			$ul = $link.closest('li').find('> ul');
+			node_id = $link.attr('rel'),
+			$ul = $link.closest('li').find('> ul'),
+			open_nodes,
+			_open_nodes = $.jStorage.get('tree_open_nodes', null);
+
+		if (_open_nodes != null) {
+			open_nodes = _open_nodes.split(',');
+		} else {
+			open_nodes = [];
+		}
 
 		if (expand) {
 			$ul.show();
 			$link.removeClass('expand').addClass('collapse');
+			if ($.inArray(node_id, open_nodes) === -1) {
+				open_nodes.push(node_id);
+			}
 		} else {
 			$ul.hide();
 			$link.removeClass('collapse').addClass('expand');
+			open_nodes.splice($.inArray(node_id, open_nodes), 1);
 		}
+
+		$.jStorage.set('tree_open_nodes', open_nodes.join(','));
 	});
 
 	$tree.delegate('.no_expand', 'click', function(e) {
@@ -74,8 +89,35 @@ $(function() {
 
 	$('.collapse_all').click(function(e) {
 		e.preventDefault();
+		$.jStorage.deleteKey('tree_open_nodes');
 		$('.tree .collapse').click();
 	});
+
+	// open the tree to the node id in the hash
+	// time to 500ms so the expand/collapse icons show correctly
+	setTimeout(function() {
+		var open_to_node_id = window.location.hash.substring(1);
+		if (open_to_node_id != '') {
+			var open_node = $('.tree li[rel="' + open_to_node_id + '"]'),
+				parents_found = open_node;
+			if (open_node.hasClass('has_children')) {
+				open_node.find('.expand:eq(0)').click();
+			}
+			do {
+				parents_found = parents_found.parents('.has_children');
+				parents_found.find('.expand:eq(0)').click();
+			} while (parents_found.length > 0);
+		}
+
+		var open_nodes = $.jStorage.get('tree_open_nodes', null);
+		if (open_nodes != null) {
+			$.each(open_nodes.split(','), function(i, node_id) {
+				if (node_id != '') {
+					$('.tree li.has_children[rel="' + node_id + '"] .expand:eq(0)').click();
+				}
+			});
+		}
+	}, 10);
 });
 
 var open_dialog = function(title, href) {
