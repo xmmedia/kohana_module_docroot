@@ -124,10 +124,11 @@ var open_dialog = function(title, href) {
 	$dialog = $('#tree_dialog').dialog({
 		title : title,
 		autoOpen : true,
-		height: 400,
-		minHeight: 400,
-		width: 450,
-		minWidth: 450,
+		modal : true,
+		height : 300,
+		minHeight : 300,
+		width : 450,
+		minWidth : 450,
 		buttons: {
 			'Close': function() {
 				$(this).dialog('close');
