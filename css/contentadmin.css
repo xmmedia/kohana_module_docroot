@@ -6,6 +6,8 @@ table.content thead tr th.column2 div { width: 80px; }
 table.content thead tr th.column3 div { width: 350px; }
 table.content thead tr th.column4 div { width: 130px; }
 
+.content_text_only { width: 99.2%; }
+
 table.content_history thead tr th.column0 div { width: 15px; }
 table.content_history thead tr th.column1 div { width: 140px; }
 table.content_history thead tr th.column2 div { width: 175px; }
