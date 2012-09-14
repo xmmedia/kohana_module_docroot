@@ -8,6 +8,8 @@ table.content thead tr th.column4 div { width: 130px; }
 
 .content_text_only { width: 99.2%; }
 
+.content_style_guide { display: none; border: 1px solid #ddd; padding: 5px; }
+
 table.content_history thead tr th.column0 div { width: 15px; }
 table.content_history thead tr th.column1 div { width: 140px; }
 table.content_history thead tr th.column2 div { width: 175px; }

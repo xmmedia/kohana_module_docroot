@@ -69,4 +69,19 @@ $(function() {
 			e.preventDefault();
 		}
 	});
+
+	$('.js_show_style_guide').on('click', function(e) {
+		e.preventDefault();
+
+		var link = $(this),
+			style_guide = $('.js_content_style_guide');
+
+		if (style_guide.is(':visible')) {
+			style_guide.slideUp();
+			link.html('Show Style Guide');
+		} else {
+			style_guide.slideDown();
+			link.html('Hide Style Guide');
+		}
+	});
 });
