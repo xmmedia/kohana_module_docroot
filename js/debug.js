@@ -48,3 +48,10 @@ var xm_debug = {
 		return dumped_text;
 	}
 };
+
+(function($) {
+	// Returns the tag name of the element
+	$.fn.tag_name = function() {
+		return (this.length > 0 ? this.get(0).tagName : 'No Element Found');
+	};
+})(jQuery);
