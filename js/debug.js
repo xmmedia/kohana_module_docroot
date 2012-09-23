@@ -37,7 +37,7 @@ var xm_debug = {
 
 				if(typeof(value) == 'object') { //If it is an array,
 					dumped_text += level_padding + "'" + item + "' ...\n";
-					dumped_text += dump(value,level+1);
+					dumped_text += xm_debug.dump(value,level+1);
 				} else {
 					dumped_text += level_padding + "'" + item + "' => \"" + value + "\"\n";
 				}
