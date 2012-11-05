@@ -28,7 +28,7 @@ $(function() {
 		e.preventDefault();
 
 		var link = $(this),
-			full_content = $('.content_diff_all[rel="' + link.attr('rel') + '"]');
+			full_content = $('.js_content_diff_all[rel="' + link.attr('rel') + '"]');
 		full_content.slideToggle(function() {
 			if ($(this).is(':visible')) {
 				link.html('Hide ' + link.data('name'));
@@ -39,7 +39,7 @@ $(function() {
 	});
 
 	// view the content of the history item
-	$('.content_history').on('click', '.js_history_view', function(e) {
+	$('.js_content_history').on('click', '.js_history_view', function(e) {
 		e.preventDefault();
 
 		var dialog = $('#js_content_admin_dialog').dialog({
