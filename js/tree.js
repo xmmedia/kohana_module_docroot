@@ -1,15 +1,15 @@
 var tree = {};
 
 $(function() {
-	var $tree = $('.tree');
+	var $tree = $('.js_tree');
 
-	$('.add_item').click(function(e) {
+	$('.js_add_item').click(function(e) {
 		e.preventDefault();
 
 		var $dialog = tree.open_dialog('Add Item', $(this).attr('href'));
 	});
 
-	$tree.delegate('.expand, .collapse', 'click', function(e) {
+	$tree.on('click', '.js_expand, .js_collapse', function(e) {
 		e.preventDefault();
 
 		var $link = $(this),
@@ -27,36 +27,36 @@ $(function() {
 
 		if (expand) {
 			$ul.show();
-			$link.removeClass('expand').addClass('collapse');
+			$link.removeClass('expand js_expand').addClass('collapse js_collapse');
 			if ($.inArray(node_id, open_nodes) === -1) {
 				open_nodes.push(node_id);
 			}
 		} else {
 			$ul.hide();
-			$link.removeClass('collapse').addClass('expand');
+			$link.removeClass('collapse js_collapse').addClass('expand js_expand');
 			open_nodes.splice($.inArray(node_id, open_nodes), 1);
 		}
 
 		$.jStorage.set('tree_open_nodes', open_nodes.join(','));
 	});
 
-	$tree.delegate('.no_expand', 'click', function(e) {
+	$tree.on('click', '.js_no_expand', function(e) {
 		e.preventDefault();
 	});
 
-	$tree.delegate('.edit_item', 'click', function(e) {
+	$tree.on('click', '.js_edit_item', function(e) {
 		e.preventDefault();
 
 		var $dialog = tree.open_dialog('Edit Item', $(this).attr('href'));
 	});
 
-	$tree.delegate('.add_sub_item', 'click', function(e) {
+	$tree.on('click', '.js_add_sub_item', function(e) {
 		e.preventDefault();
 
 		var $dialog = tree.open_dialog('Add Sub Item', $(this).attr('href'));
 	});
 
-	$tree.delegate('.delete_item', 'click', function(e) {
+	$tree.on('click', '.js_delete_item', function(e) {
 		e.preventDefault();
 
 		var $dialog = tree.open_dialog('Delete Item');
@@ -66,7 +66,7 @@ $(function() {
 				$dialog.html(return_data.html)
 					.find('input:visible:eq(0)').focus();
 				$dialog.find('input[name="delete_confirm"][value="No"]').click(function() {
-					$('#tree_dialog').dialog('close');
+					$('#js_tree_dialog').dialog('close');
 				});
 				$dialog.dialog('option', {
 					buttons : {
@@ -84,15 +84,15 @@ $(function() {
 		});
 	});
 
-	$('.expand_all').click(function(e) {
+	$('.js_expand_all').on('click', function(e) {
 		e.preventDefault();
-		$('.tree .expand').click();
+		$('.js_tree .js_expand').click();
 	});
 
-	$('.collapse_all').click(function(e) {
+	$('.js_collapse_all').on('click', function(e) {
 		e.preventDefault();
 		$.jStorage.deleteKey('tree_open_nodes');
-		$('.tree .collapse').click();
+		$('.js_tree .js_collapse').click();
 	});
 
 	// open the tree to the node id in the hash
@@ -100,13 +100,13 @@ $(function() {
 	setTimeout(function() {
 		var open_to_node_id = window.location.hash.substring(1);
 		if (open_to_node_id != '') {
-			var open_node = $('.tree li[rel="' + open_to_node_id + '"]'),
+			var open_node = $('.js_tree li[rel="' + open_to_node_id + '"]'),
 				parents_found = open_node;
-			if (open_node.hasClass('has_children')) {
-				open_node.find('.expand:eq(0)').click();
+			if (open_node.hasClass('js_has_children')) {
+				open_node.find('.js_expand:eq(0)').click();
 			}
 			do {
-				parents_found = parents_found.parents('.has_children');
+				parents_found = parents_found.parents('.js_has_children');
 				parents_found.find('.expand:eq(0)').click();
 			} while (parents_found.length > 0);
 		}
@@ -115,7 +115,7 @@ $(function() {
 		if (open_nodes != null) {
 			$.each(open_nodes.split(','), function(i, node_id) {
 				if (node_id != '') {
-					$('.tree li.has_children[rel="' + node_id + '"] .expand:eq(0)').click();
+					$('.js_tree li.js_has_children[rel="' + node_id + '"] .js_expand:eq(0)').click();
 				}
 			});
 		}
