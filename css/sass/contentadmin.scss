@@ -1,0 +1,23 @@
+label.block { display: block; }
+
+table.content thead tr th.column0 div, table.content .column0 { width: 65px; }
+table.content thead tr th.column1 div { width: 150px; }
+table.content thead tr th.column2 div { width: 80px; }
+table.content thead tr th.column3 div { width: 350px; }
+table.content thead tr th.column4 div { width: 130px; }
+
+.content_text_only { width: 99.2%; }
+
+.content_style_guide { display: none; border: 1px solid #ddd; padding: 5px; }
+
+table.content_history thead tr th.column0 div { width: 15px; }
+table.content_history thead tr th.column1 div { width: 140px; }
+table.content_history thead tr th.column2 div { width: 175px; }
+table.content_history thead tr th.column3 div { width: 570px; }
+
+.content_admin_diff_header { width: 100%; overflow: auto; margin-bottom: 10px; }
+.content_admin_diff_header > div { float: left; width: 45%; padding-right: 5%; }
+.content_diff, .content_diff_all { border: 1px solid #ddd; padding: 10px; }
+.content_diff .diff-html-added { background-color: #82ff6e; }
+.content_diff .diff-html-removed { color: #f00; text-decoration: line-through; }
+.content_diff_all { display: none; }
