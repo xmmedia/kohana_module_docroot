@@ -2,3 +2,11 @@
 @mixin debug_border() {
 	border: 1px solid #f00;
 }
+
+// see: http://seesparkbox.com/foundry/scss_rem_mixin_now_with_a_better_fallback
+@mixin font-size( $decimal-size, $keyword: null ) {
+	$base-font-multiplier: 1;
+	@if $keyword { font-size: $keyword; }
+	@else { font-size: $decimal-size * $base-font-multiplier * 16px; }
+	font-size: $decimal-size * 1rem;
+}
