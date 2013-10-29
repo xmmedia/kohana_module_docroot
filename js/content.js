@@ -55,7 +55,7 @@ $(function() {
 		}).html('<img src="/images/loading.gif"> Loading...');
 
 		$.getJSON($(this).attr('href'), function(return_data) {
-			if (cl4.process_ajax(return_data)) {
+			if (xm.process_ajax(return_data)) {
 				dialog.html(return_data.html);
 			} else {
 				dialog.html(return_data.error_msg);

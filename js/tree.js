@@ -62,7 +62,7 @@ $(function() {
 		var $dialog = tree.open_dialog('Delete Item');
 
 		$.getJSON($(this).attr('href'), function(return_data) {
-			if (cl4.process_ajax(return_data)) {
+			if (xm.process_ajax(return_data)) {
 				$dialog.html(return_data.html)
 					.find('input:visible:eq(0)').focus();
 				$dialog.find('input[name="delete_confirm"][value="No"]').click(function() {
@@ -140,7 +140,7 @@ tree.open_dialog = function(title, href) {
 
 	if (typeof href != 'undefined') {
 		$.getJSON(href, function(return_data) {
-			if (cl4.process_ajax(return_data)) {
+			if (xm.process_ajax(return_data)) {
 				$dialog.html(return_data.html)
 					.find('input:visible:eq(0)').focus();
 				$dialog.dialog('option', {
