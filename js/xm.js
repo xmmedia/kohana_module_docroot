@@ -128,7 +128,7 @@ $(function() {
 	// for checkboxes in tables to add .selected to the row
 	$('.js_xm_row_checkbox').on('change', xm.row_checked);
 
-	// found in views/xm/xmadmin/header.php
+	// found in views/xm/db_admin/header.php
 	$('.js_xm_model_select_form').on('change', xm.model_select_change);
 	$('.js_xm_model_select_go').on('click', xm.model_select_change);
 });
