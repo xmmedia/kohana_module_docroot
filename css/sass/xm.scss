@@ -1,0 +1,17 @@
+@import "_xm_mixins";
+
+$debug_msg_img: image-url('message-debug.gif', false, false);
+
+$xm_icons-layout: smart;
+$xm_icons-sprite-dimensions: true;
+@import "xm_icons/*.png";
+
+$xm_arrows-layout: smart;
+$xm_arrows-sprite-dimensions: true;
+@import "xm_arrows/*.png";
+
+$xm_file_types-layout: smart;
+$xm_file_types-sprite-dimensions: true;
+@import "xm_file_types/*.png";
+
+@include xm_all();
