@@ -97,7 +97,7 @@ xm.add_default_ajax_error = function(return_data, default_msg) {
 $('#xm_ajax_errors').ajaxError(function(event, jqXHR, ajaxSettings, thrownError) {
 	if (typeof ajaxSettings.xm_ajax_error_display == 'undefined' || ajaxSettings.xm_ajax_error_display) {
 		xm.add_ajax_error(xm.ajax_error_msgs.default_msg);
-		if (xm_in_debug) {
+		if (in_debug) {
 			xm.ajax_log_msg('AJAX Error: ' + thrownError);
 		}
 	}
@@ -109,19 +109,19 @@ $('#xm_ajax_errors').ajaxError(function(event, jqXHR, ajaxSettings, thrownError)
 xm.process_ajax = function(return_data) {
 	if (typeof return_data != 'object' || jQuery.isEmptyObject(return_data)) {
 		xm.add_default_ajax_error();
-		if (xm_in_debug) {
+		if (in_debug) {
 			xm.ajax_log_msg('JSON data is not parsable');
 		}
 		return false;
 	}
 
-	if (xm_in_debug && typeof return_data.debug_msg != 'undefined' && return_data.debug_msg !== '') {
+	if (in_debug && typeof return_data.debug_msg != 'undefined' && return_data.debug_msg !== '') {
 		xm.add_ajax_error(return_data.debug_msg);
 	}
 
 	// check to see if we've received the status, because we need it for the rest
 	if (typeof return_data.status == 'undefined') {
-		if (xm_in_debug) {
+		if (in_debug) {
 			xm.ajax_log_msg('No status property in JSON data');
 		}
 		return;
@@ -130,42 +130,42 @@ xm.process_ajax = function(return_data) {
 	switch (return_data.status) {
 		// successful
 		case 1 :
-			if (xm_in_debug) {
+			if (in_debug) {
 				xm.ajax_log_msg('AJAX all good');
 			}
 			return true;
 		// not logged in
 		case 2 :
 			xm.add_default_ajax_error(return_data, xm.ajax_error_msgs.not_logged_in);
-			if (xm_in_debug) {
+			if (in_debug) {
 				xm.ajax_log_msg('The user is not logged in');
 			}
 			return false;
 		// timed out
 		case 3 :
 			xm.add_default_ajax_error(return_data, xm.ajax_error_msgs.timed_out);
-			if (xm_in_debug) {
+			if (in_debug) {
 				xm.ajax_log_msg('The user has timed out');
 			}
 			return false;
 		// not allowed (permissions)
 		case 4 :
 			xm.add_default_ajax_error(return_data, xm.ajax_error_msgs.not_allowed);
-			if (xm_in_debug) {
+			if (in_debug) {
 				xm.ajax_log_msg('The user does not have permissions');
 			}
 			return false;
 		// not found 404
 		case 5 :
 			xm.add_default_ajax_error(return_data, xm.ajax_error_msgs.not_found_404);
-			if (xm_in_debug) {
+			if (in_debug) {
 				xm.ajax_log_msg('The page/path could not be found');
 			}
 			return false;
 		// validation error
 		case 6 :
 			xm.add_ajax_validation_msg(return_data);
-			if (xm_in_debug) {
+			if (in_debug) {
 				xm.ajax_log_msg('There was a validation error');
 			}
 			return false;
@@ -173,7 +173,7 @@ xm.process_ajax = function(return_data) {
 		case 0 :
 		default :
 			xm.add_default_ajax_error(return_data);
-			if (xm_in_debug) {
+			if (in_debug) {
 				if (typeof return_data.debug_msg != 'undefined' && return_data.debug_msg !== '') {
 					xm.ajax_log_msg('AJAX Error: ' + return_data.debug_msg);
 				} else {
