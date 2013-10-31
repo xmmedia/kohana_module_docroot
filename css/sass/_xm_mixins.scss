@@ -8,7 +8,6 @@
 	@include xm_editable_list();
 	@include xm_nav();
 	@include xm_content();
-	@include xm_field_help();
 
 	@include xm_field_help();
 	@include xm_message($debug_msg_img);
