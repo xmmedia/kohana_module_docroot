@@ -22,7 +22,6 @@
 	.no_errors { color: $color_grey; }
 
 	.left_col {
-		@extend %bottom_border;
 		float: left; width: 30%; min-height: 20em; overflow: hidden; border-right: 1px solid $color_light_grey;
 		.error_groups {
 			@extend %no_list;
