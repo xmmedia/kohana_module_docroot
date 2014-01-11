@@ -1,5 +1,5 @@
 $(function() {
-	$('.js_error_groups').on('click', 'li', function(e) {
+	$('.js_error_groups').on('click', 'li:not(.js_filter)', function(e) {
 		e.preventDefault();
 
 		window.location = $(this).data('view_url');

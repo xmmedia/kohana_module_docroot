@@ -35,10 +35,17 @@
 			.occurances { float: right; padding: 0.2em 0.4em; background: $color_grey; color: #fff; border-radius: $border_radius; }
 			.message { width: 98%; overflow: hidden; }
 		}
+
+		.resolved_filter {
+			color: $color_grey;
+			a { float: right; }
+		}
 	}
 
 	.right_col {
 		float: left; width: 70%; overflow: hidden;
+
+		.no_data { padding: 0 $padding; }
 
 		.error_status {
 			@extend %clearfix, %bottom_border;
@@ -72,7 +79,10 @@
 
 		.occurances {
 			float: right; margin: 0.6em 0 0.4em 0;
-			> div { display: inline-block; padding: 0.2em 0.4em; background: $color_grey; color: #fff; border-radius: $border_radius; }
+			> div {
+				margin-bottom: 0.3em;
+				> div { display: inline-block; padding: 0.2em 0.4em; background: $color_grey; color: #fff; border-radius: $border_radius; }
+			}
 		}
 
 		.error_details {
