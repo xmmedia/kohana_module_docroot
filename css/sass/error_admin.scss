@@ -36,9 +36,15 @@
 			.message { width: 98%; overflow: hidden; }
 		}
 
-		.resolved_filter {
-			color: $color_grey;
-			a { float: right; }
+		.error_actions {
+			@extend %bottom_border;
+			padding: $padding; color: $color_grey;
+			.action {
+				@extend %clearfix;
+				padding-bottom: $padding;
+				&:last-child { padding-bottom: 0; }
+				a { float: right; }
+			}
 		}
 	}
 
