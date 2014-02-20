@@ -125,13 +125,18 @@
 		.error, .warning, .notice, .debug {
 			margin: 0.3em;
 			padding: 0.4em;
-			border: 1px solid #5a5aff;
+			border: 1px solid darken(#dbdbff, 10%);
 			border-radius: 0.5em;
 			background-color: #dbdbff;
 		}
-		.warning { border-color: #e08900; background-color: #ffdaa0; }
-		.error { border-color: #e50000; background-color: #fea4a4; }
-		.debug { padding-left: 6em; border-color: #44ba30; background: #c7febe $debug_msg_img no-repeat; }
+		.warning { border-color: darken(#ffdaa0, 15%); background-color: #ffdaa0; }
+		.error { border-color: darken(#fea4a4, 10%); background-color: #fea4a4; }
+		.debug {
+			padding-left: 6em;
+			border-color: darken(#c7febe, 20%);
+			background: #c7febe $debug_msg_img no-repeat;
+			background-position: 1px -1px;
+		}
 	}
 }
 
