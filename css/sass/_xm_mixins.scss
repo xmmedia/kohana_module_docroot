@@ -137,6 +137,20 @@
 			background: #c7febe $debug_msg_img no-repeat;
 			background-position: 1px -1px;
 		}
+		.hide {
+			display: block;
+			float: right;
+			margin: -1px 0.2em 0 0;
+			padding: 0.2em 0.4em;
+			color: darken(#c9c9c9, 25%);
+			text-decoration: none;
+			font-size: 0.8em;
+			font-weight: bold;
+			border: 1px solid darken(#c9c9c9, 10%);
+			border-radius: 0.8em;
+			background-color: #c9c9c9;
+			&:hover { color: darken(#c9c9c9, 35%); background-color: darken(#c9c9c9, 10%); }
+		}
 	}
 }
 
