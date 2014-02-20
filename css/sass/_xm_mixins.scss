@@ -119,12 +119,39 @@
 
 /** message formating **/
 @mixin xm_message($debug_msg_img: "url('message-debug.gif')") {
-	.xm_message { list-style: none; font-weight: bold; margin: 5px 0; }
-	.xm_message li { list-style: none; }
-	.xm_message .error, .xm_message .warning, .xm_message .notice, .xm_message .debug { margin: 2px; padding: 5px; border: 1px dashed #5a5aff; background-color: #dbdbff; }
-	.xm_message .warning { border-color: #e08900; background-color: #ffdaa0; }
-	.xm_message .error { border-color: #e50000; background-color: #fea4a4; }
-	.xm_message .debug { border-color: #44ba30; background: #c7febe $debug_msg_img no-repeat; padding-left: 75px; }
+	.xm_message {
+		margin: 0.4em 0; list-style: none; font-weight: bold;
+		li { list-style: none; }
+		.error, .warning, .notice, .debug {
+			margin: 0.3em;
+			padding: 0.4em;
+			border: 1px solid darken(#dbdbff, 10%);
+			border-radius: 0.5em;
+			background-color: #dbdbff;
+		}
+		.warning { border-color: darken(#ffdaa0, 15%); background-color: #ffdaa0; }
+		.error { border-color: darken(#fea4a4, 10%); background-color: #fea4a4; }
+		.debug {
+			padding-left: 6em;
+			border-color: darken(#c7febe, 20%);
+			background: #c7febe $debug_msg_img no-repeat;
+			background-position: 1px -1px;
+		}
+		.hide {
+			display: block;
+			float: right;
+			margin: -1px 0.2em 0 0;
+			padding: 0.2em 0.4em;
+			color: darken(#c9c9c9, 25%);
+			text-decoration: none;
+			font-size: 0.8em;
+			font-weight: bold;
+			border: 1px solid darken(#c9c9c9, 10%);
+			border-radius: 0.8em;
+			background-color: #c9c9c9;
+			&:hover { color: darken(#c9c9c9, 35%); background-color: darken(#c9c9c9, 10%); }
+		}
+	}
 }
 
 /** formatting for buttons inside delete messages (likely contained in .xm_message ul) **/

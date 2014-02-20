@@ -94,6 +94,16 @@ xm.row_checked = function() {
 };
 
 /**
+ * On click, hide the message and then remove it from the dom.
+ */
+xm.hide_message = function(e) {
+	e.preventDefault();
+	$(this).closest('.js_xm_message_item').slideUp(function(e) {
+		e.remove();
+	});
+};
+
+/**
 * When the model is changed or the go button is clicked at the top of the page this will be triggered
 * Redirects the user to the selected model
 */
@@ -127,6 +137,9 @@ $(function() {
 
 	// for checkboxes in tables to add .selected to the row
 	$('.js_xm_row_checkbox').on('change', xm.row_checked);
+
+	// message hiding
+	$('.js_xm_message').on('click', '.js_hide', xm.hide_message);
 
 	// found in views/xm/db_admin/header.php
 	$('.js_xm_model_select_form').on('change', xm.model_select_change);
