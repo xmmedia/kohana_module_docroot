@@ -28,85 +28,115 @@
 /** table striping **/
 /* this needs to be up here so things later on can override it, like a hover */
 @mixin tr_odd_even() {
-	tr.even td { background-color: #e4e4e4; }
-	tr.odd td { background-color: #f1f1f1; }
+	tr {
+		&.even td { background-color: #e4e4e4; }
+		&.odd td { background-color: #f1f1f1; }
+	}
 }
 
 /** styles for xm forms **/
 @mixin xm_form() {
 	/** error styles for required and error fields in forms **/
-	label.xm_required { color: #f00; }
-	input.xm_required { } /* todo:add required sprite? */
-	label.xm_field_error { color: #f00; }
-	input.xm_field_error, textarea.xm_field_error { border: 1px solid #f00; }
+	label {
+		&.xm_required, &.xm_field_error { color: #f00; }
+	}
+	input, textarea {
+		&.xm_field_error { border: 1px solid #f00; }
+	}
 
 	/** xm table form css **/
 	table.xm_form td { padding: 4px; border: 1px solid #fff; border-top: none; border-left: none; }
 
 	/** ul form css **/
-	ul.xm_form li { list-style: none; }
-	ul.xm_form li ul { width: 450px; }
-	ul.xm_form li ul li { float: left; width: 200px; }
+	ul.xm_form  {
+		list-style: none;
+		li ul {
+			width: 450px;
+			li { float: left; width: 200px; }
+		}
+	}
 
 	/** buttons displayed below the forms **/
-	.xm_buttons { background-color: #f3db84; padding: 0.4em; margin-top: 0.15em; }
+	.xm_buttons {
+		margin-top: 0.15em; padding: 0.4em; background-color: #f3db84;
+		input { margin-right: 0.5em; }
+	}
 	.xm_buttons_top { margin-bottom: 0.2em; }
-	.xm_buttons input { margin-right: 0.5em; }
 
 	.xm_tools { margin: 0 0 0.2em 0; line-height: 1.5em; padding: 0.4em 0.7em; }
 }
 
 /** multiple edit table **/
 @mixin xm_edit_multiple() {
-	.xm_edit_multiple thead tr th, .xm_edit_multiple tbody tr td { padding:4px; border-bottom:1px solid #fff; border-right:1px solid #fff; }
-	.xm_edit_multiple thead tr th:last-child, .xm_edit_multiple tbody tr td:last-child { border-right:none; }
-	.xm_edit_multiple thead tr th { color:#fff; text-align:left; background:#245698 center right; }
-	/* this is to align the checkbox to check all */
-	.xm_edit_multiple tr:hover td { background-color:#d6d6d6; }
+	.xm_edit_multiple {
+		thead tr th, tbody tr td {
+			padding: 4px; border-bottom: 1px solid #fff; border-right: 1px solid #fff;
+			&:last-child, &:last-child { border-right: none; }
+		}
+		thead tr th { color: #fff; text-align: left; background: #245698 center right; }
+		/* this is to align the checkbox to check all */
+		tr:hover td { background-color: #d6d6d6; }
+	}
 }
-
-
 
 /** editable list css **/
 @mixin xm_editable_list() {
 	/* main page buttons row, appears above the search results and has the add, edit multiple, search, etc. buttons */
-	.xm_list_header { background-color: #f3db84; padding: 5px 8px; margin: 4px 0 0 0; }
-	.xm_list_header h2 { display: inline; float: right; padding: 0; margin: 0; font-size: 1.5em; }
-	.xm_list_header .xm_add_multiple_count { margin-right: 10px; }
+	.xm_list_header {
+		margin: 4px 0 0 0; padding: 5px 8px; background-color: #f3db84;
+		h2 { display: inline; float: right; padding: 0; margin: 0; font-size: 1.5em; }
+		.xm_add_multiple_count { margin-right: 10px; }
+	}
 
 	/** small buttons at the top of a list of records  in admin **/
-	.xm_list_button { font-family: sans-serif; font-size: 0.9em; margin-right: 10px; }
+	.xm_list_button { margin-right: 10px; font-family: sans-serif; font-size: 0.9em; }
 }
 
 /* claero custom pagination */
 @mixin xm_nav() {
-	.xm_nav { margin: 2px 0; background-color: #e4e4e4; padding: 0.4em; color: #184a8c; overflow: hidden; }
-	.xm_nav a { color: #184a8c; }
-	.xm_nav a:hover, .xm_nav a:active, .xm_nav a:visited { color: #2f67b2; }
+	.xm_nav {
+		margin: 2px 0; padding: 0.4em; background-color: #e4e4e4; color: #184a8c; overflow: hidden;
+		a { color: #184a8c; }
+		a:hover, a:active, a:visited { color: #2f67b2; }
+		.current_page { font-weight: bold; }
+		select { font-size: 0.7em; }
+	}
 	.xm_nav_pages { float: left; }
 	.xm_nav_showing { float: right; }
-	.xm_nav .current_page { font-weight: bold; }
-	.xm_nav select { font-size: 0.7em; }
 }
 
 /** xm "content" table for data **/
 @mixin xm_content() {
-	.xm_content { width: 100%; }
-	.xm_content thead tr th, .xm_content tbody tr td { padding: 3px; border-bottom: 1px solid #fff; border-right: 1px solid #fff; }
-	.xm_content thead tr th:last-child, .xm_content tbody tr td:last-child { border-right: none; }
-	.xm_content thead tr th { color: #fff; text-align: left;  background: #245698 center right; }
-	.xm_content thead tr th a { font-weight: bold; text-decoration: none; color: #fff; }
-	.xm_content thead tr th.sort_asc, .xm_content thead tr th.sort_desc { background-color: #5478a8; }
-	.xm_content thead tr th .sort_icon { float: right; }
-	.xm_content thead tr th:hover { background-color: #3e6fb0; }
-	.xm_content tbody tr td.sort_asc, .xm_content tbody tr td.sort_desc { background-color: #d6d6d6; }
-	/* this is to align the checkbox to check all */
-	.xm_content thead tr th.column0 { padding-right: 2px; vertical-align: bottom; }
-	.xm_content thead tr th.column0 div { width: 105px; text-align: right; }
-	.xm_content .column0 { width: 105px; text-align: right; }
-	.xm_content .column0 a { margin-left: 2px; }
-	.xm_content tr:hover td { background-color: #d6d6d6; }
-	.xm_content tr.selected td { background-color: #f3db84; }
+	.xm_content {
+		width: 100%;
+		thead tr th, tbody tr td {
+			padding: 3px; border-bottom: 1px solid #fff; border-right: 1px solid #fff;
+			&:last-child, &:last-child { border-right: none; }
+		}
+
+		thead tr th {
+			color: #fff; text-align: left;  background: #245698 center right;
+			a { font-weight: bold; text-decoration: none; color: #fff; }
+			&.sort_asc, &.sort_desc { background-color: #5478a8; }
+			.sort_icon { float: right; }
+			&:hover { background-color: #3e6fb0; }
+			/* this is to align the checkbox to check all */
+			&.column0 {
+				padding-right: 2px; vertical-align: bottom;
+				div { width: 105px; text-align: right; }
+			}
+		}
+		tbody tr td.sort_asc, tbody tr td.sort_desc { background-color: #d6d6d6; }
+
+		.column0 {
+			width: 105px; text-align: right;
+			a { margin-left: 2px; }
+		}
+		tr {
+			&:hover td { background-color: #d6d6d6; }
+			&.selected td { background-color: #f3db84; }
+		}
+	}
 
 	/* formatting for message re 0 rows found */
 	.xm_no_rows { border: #d6d6d6 1px solid; padding: 3px 3px 3px 4px; font-weight: bold; color: #184a8c; }
@@ -177,24 +207,33 @@
 		width: 100%;
 		text-align: center;
 		z-index: 10000;
+		div {
+			display: none;
+			border-bottom: 1px solid #6d1c09;
+			background-color: #aa2c0f;
+			font-size: 1.3em;
+			color: #fff;
+			padding: 7px;
+
+			a { color: #fff; }
+			span.dismiss {
+				display: block;
+				float: right;
+				margin-right: 10px;
+				padding: 2px 4px;
+				background-color: #92240a;
+				border: 2px solid #6c1906;
+				text-decoration: none;
+				font-size: 0.8em;
+				font-weight: bold;
+				cursor: pointer;
+			}
+			span.dismiss:hover { background-color: #7e1e07; }
+			span.dismiss a { text-decoration: none; }
+			/* so this won't display the list of errors on the same line as the prefix msg, add a br after the prefix msg */
+			&.xm_ajax_validation_msg ul { display: inline-block; text-align: left; }
+		}
 	}
-	#xm_ajax_errors div { display:none; border-bottom:1px solid #6d1c09; background-color:#aa2c0f; font-size:1.3em; color:#fff; padding:7px; }
-	#xm_ajax_errors div a { color:#fff; }
-	#xm_ajax_errors div span.dismiss {
-		background-color:#92240a;
-		float:right;
-		margin-right:10px;
-		border:2px solid #6c1906;
-		padding:2px 4px;
-		text-decoration:none;
-		display:block;
-		cursor:pointer;
-		font-size: 0.8em;
-		font-weight:bold;
-	}
-	#xm_ajax_errors div span.dismiss:hover { background-color:#7e1e07; }
-	#xm_ajax_errors div span.dismiss a { text-decoration: none; }
-	#xm_ajax_errors div.xm_ajax_validation_msg ul { display:inline-block; text-align:left; } /* so this won't display the list of errors on the same line as the prefix msg, add a br after the prefix msg */
 }
 
 
@@ -202,7 +241,7 @@
 @mixin xm_icon_defaults() {
 	/* the default icon class that needs to be added to all span tags with xm icons in them */
 	/* usage: <span class="xm_icon xm_edit">&nbsp;</span> */
-	.xm_icon { text-decoration: none; display: inline-block; margin: 0 0.2em -0.2em 0.2em; }
+	.xm_icon { display: inline-block; margin: 0 0.2em -0.2em 0.2em; text-decoration: none; }
 	.xm_no_icon { height: 14px; width: 14px; }
 }
 
@@ -265,5 +304,5 @@
 
 /** for model create in xm admin **/
 @mixin xm_model_code_container() {
-	.xm_model_code_container { width:100%; height:800px; margin:15px 0; }
+	.xm_model_code_container { width: 100%; height: 800px; margin: 15px 0; }
 }
