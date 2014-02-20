@@ -3,7 +3,6 @@
 @mixin xm_all() {
 	@include tr_odd_even();
 	@include xm_form();
-	@include xm_ui_datepicker();
 	@include xm_edit_multiple();
 	@include xm_editable_list();
 	@include xm_nav();
@@ -56,14 +55,6 @@
 
 	.xm_tools { margin: 0 0 0.2em 0; line-height: 1.5em; padding: 0.4em 0.7em; }
 }
-
-/** jquery date picker customizations **/
-@mixin xm_ui_datepicker() {
-	.ui-datepicker-trigger { padding-left: 3px; margin-bottom: -5px; }
-	.ui-datepicker-append { font-size: 0.8em; color: #888; padding-left: 3px; }
-}
-
-
 
 /** multiple edit table **/
 @mixin xm_edit_multiple() {
