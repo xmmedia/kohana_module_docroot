@@ -99,7 +99,7 @@ xm.row_checked = function() {
 xm.hide_message = function(e) {
 	e.preventDefault();
 	$(this).closest('.js_xm_message_item').slideUp(function(e) {
-		e.remove();
+		$(e).remove();
 	});
 };
 
