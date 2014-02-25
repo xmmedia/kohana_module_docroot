@@ -15,13 +15,6 @@
 	@include xm_date_operand();
 	@include xm_ajax_errors();
 
-	@include xm_icon_defaults();
-
-	/** create the xm icons using the xm mixins **/
-	@include xm_icons();
-	@include xm_arrows();
-	@include xm_file_types();
-
 	@include xm_model_code_container();
 }
 
@@ -130,7 +123,7 @@
 
 		.column0 {
 			width: 105px; text-align: right;
-			a { margin-left: 2px; }
+			a { margin-left: 2px; /* border: 1px solid #f00; */ }
 		}
 		tr {
 			&:hover td { background-color: #d6d6d6; }
@@ -168,18 +161,9 @@
 			background-position: 1px -1px;
 		}
 		.hide {
-			display: block;
 			float: right;
-			margin: -1px 0.2em 0 0;
-			padding: 0.2em 0.4em;
-			color: darken(#c9c9c9, 25%);
-			text-decoration: none;
-			font-size: 0.8em;
-			font-weight: bold;
-			border: 1px solid darken(#c9c9c9, 10%);
-			border-radius: 0.8em;
-			background-color: #c9c9c9;
-			&:hover { color: darken(#c9c9c9, 35%); background-color: darken(#c9c9c9, 10%); }
+			.glyphicons:before { color: darken(#c9c9c9, 25%); }
+			&:hover .glyphicons:before { color: darken(#c9c9c9, 35%); }
 		}
 	}
 }
@@ -234,72 +218,6 @@
 			&.xm_ajax_validation_msg ul { display: inline-block; text-align: left; }
 		}
 	}
-}
-
-
-
-@mixin xm_icon_defaults() {
-	/* the default icon class that needs to be added to all span tags with xm icons in them */
-	/* usage: <span class="xm_icon xm_edit">&nbsp;</span> */
-	.xm_icon { display: inline-block; margin: 0 0.2em -0.2em 0.2em; text-decoration: none; }
-	.xm_no_icon { height: 14px; width: 14px; }
-}
-
-@mixin xm_icons() {
-	.xm_add { @include xm_icons-sprite(add); }
-	.xm_delete { @include xm_icons-sprite(delete); }
-	.xm_edit { @include xm_icons-sprite(edit); }
-	.xm_view { @include xm_icons-sprite(view); }
-	.xm_info { @include xm_icons-sprite(info); }
-	.xm_help { @include xm_icons-sprite(help); }
-	/* xm_checked is a special class used in ORM_Checkbox, it's corresponding class for unchecked is xm_unchecked */
-	.xm_check, .xm_checked { @include xm_icons-sprite(check); }
-	.xm_no_check { @include xm_icons-sprite(no_check); }
-	.xm_print { @include xm_icons-sprite(print); }
-	.xm_mail { @include xm_icons-sprite(mail); }
-	.xm_warning { @include xm_icons-sprite(warning); }
-	.xm_flag1 { @include xm_icons-sprite(flag1); }
-	.xm_flag2 { @include xm_icons-sprite(flag2); }
-	.xm_gear { @include xm_icons-sprite(gear); }
-	.xm_wrench { @include xm_icons-sprite(wrench); }
-	.xm_link { @include xm_icons-sprite(link); }
-	.xm_alert { @include xm_icons-sprite(alert); }
-	.xm_contact { @include xm_icons-sprite(contact); }
-	.xm_contact2 { @include xm_icons-sprite(contact2); }
-	.xm_checkmark { @include xm_icons-sprite(checkmark); }
-	.xm_no_checkmark { @include xm_icons-sprite(no_checkmark); }
-	.xm_globe { @include xm_icons-sprite(globe); }
-	.xm_refresh { @include xm_icons-sprite(refresh); }
-	.xm_calendar1 { @include xm_icons-sprite(calendar1); }
-	.xm_calendar2 { @include xm_icons-sprite(calendar2); }
-	.xm_grid { @include xm_icons-sprite(grid); }
-	.xm_minus { @include xm_icons-sprite(minus); }
-	.xm_download { @include xm_icons-sprite(download); }
-	.xm_lock { @include xm_icons-sprite(lock); }
-}
-
-@mixin xm_arrows() {
-	.xm_right { @include xm_arrows-sprite(right); }
-	.xm_left { @include xm_arrows-sprite(left); }
-	.xm_up { @include xm_arrows-sprite(up); }
-	.xm_down { @include xm_arrows-sprite(down); }
-	.xm_no_right { @include xm_arrows-sprite(no_right); }
-	.xm_no_left { @include xm_arrows-sprite(no_left); }
-	.xm_no_up { @include xm_arrows-sprite(no_up); }
-	.xm_no_down { @include xm_arrows-sprite(no_down); }
-	.xm_open_down { @include xm_arrows-sprite(open_down); }
-	.xm_open_up { @include xm_arrows-sprite(open_up); }
-	.xm_open_right { @include xm_arrows-sprite(open_right); }
-	.xm_open_left { @include xm_arrows-sprite(open_left); }
-}
-
-@mixin xm_file_types() {
-	.xm_pdf { @include xm_file_types-sprite(pdf); }
-	.xm_word { @include xm_file_types-sprite(word); }
-	.xm_excel { @include xm_file_types-sprite(excel); }
-	.xm_powerpoint { @include xm_file_types-sprite(powerpoint); }
-	.xm_image { @include xm_file_types-sprite(image); }
-	.xm_acrobat { @include xm_file_types-sprite(acrobat); }
 }
 
 /** for model create in xm admin **/
