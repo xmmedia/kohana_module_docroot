@@ -38,7 +38,10 @@
 	}
 
 	/** xm table form css **/
-	table.xm_form td { padding: 4px; border: 1px solid #fff; border-top: none; border-left: none; }
+	table.xm_form {
+		.column0 > div { min-width: 7em; max-width: 20em; }
+		td { padding: 4px; border: 1px solid #fff; border-top: none; border-left: none; }
+	}
 
 	/** ul form css **/
 	ul.xm_form  {
