@@ -14,6 +14,7 @@
 	@include xm_hidden_values();
 	@include xm_date_operand();
 	@include xm_ajax_errors();
+	@include xm_spinner();
 
 	@include xm_model_code_container();
 }
@@ -220,6 +221,36 @@
 			/* so this won't display the list of errors on the same line as the prefix msg, add a br after the prefix msg */
 			&.xm_ajax_validation_msg ul { display: inline-block; text-align: left; }
 		}
+	}
+}
+
+/* the css for the CSS loading "spinner"
+ * based on: https://github.com/tobiasahlin/SpinKit
+ */
+@mixin xm_spinner() {
+	.xm_spinner {
+		float: left;
+		width: 4em;
+		margin-right: 0.2em;
+		padding-top: 0.2em;
+		text-align: center;
+		> div {
+			width: 1.2em;
+			height: 1.2em;
+			background-color: #2b82cb;
+			border-radius: 100%;
+			display: inline-block;
+			animation: xm_spinner 1.4s infinite ease-in-out;
+			/* Prevent first frame from flickering when animation starts */
+			animation-fill-mode: both;
+		}
+		.bounce_1 { animation-delay: -0.32s; }
+		.bounce_2 { animation-delay: -0.16s; }
+	}
+
+	@keyframes xm_spinner {
+		0%, 80%, 100% { transform: scale(0.0); }
+		40% { transform: scale(1.0); }
 	}
 }
 

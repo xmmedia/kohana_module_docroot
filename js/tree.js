@@ -136,7 +136,7 @@ tree.open_dialog = function(title, href) {
 				$(this).dialog('close');
 			}
 		}
-	}).html('<span class="glyphicons refresh spin"></span> Loading...');
+	}).html(xm.spinner + ' Loading...');
 
 	if (typeof href != 'undefined') {
 		$.getJSON(href, function(return_data) {

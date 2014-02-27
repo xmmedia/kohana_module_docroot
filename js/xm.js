@@ -1,5 +1,8 @@
 // create the xm object
-var xm = {};
+var xm = {
+	// CSS spinner
+	spinner : '<div class="xm_spinner"><div class="bounce_1"></div><div class="bounce_2"></div><div class="bounce_3"></div></div>'
+};
 
 // stores the count of the number of records checked
 xm.multiple_edit_count = 0;

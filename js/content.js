@@ -52,7 +52,7 @@ $(function() {
 					$(this).dialog('close');
 				}
 			}
-		}).html('<span class="glyphicons refresh spin"></span> Loading...');
+		}).html(xm.spinner + ' Loading...');
 
 		$.getJSON($(this).attr('href'), function(return_data) {
 			if (xm.process_ajax(return_data)) {
