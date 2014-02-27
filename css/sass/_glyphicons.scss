@@ -521,21 +521,6 @@
 	&.not_checked { &:before { content:"\E207"; color: #03a71a; opacity: 0.4; } }
 	&.chevron-no_right { &:before { content:"\E224"; opacity: 0.4; } }
 	&.chevron-no_left { &:before { content:"\E225"; opacity: 0.4; } }
-
-	/* spinner
-	 * Use as: HTML::icon('refresh spin')
-	 * or: <span class="glyphicons refresh spin"></span>
-	 */
-	&.spin {
-		animation: spin 2s infinite linear;
-		cursor: progress;
-		transform-origin: 7px -7px;
-	}
-}
-
-@keyframes spin {
-	0% { transform:rotate(0deg) }
-	100% { transform:rotate(359deg) }
 }
 
 /* added for links */
