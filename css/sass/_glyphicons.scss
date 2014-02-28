@@ -16,7 +16,7 @@
 .glyphicons {
 	display: inline-block;
 	position: relative;
-	padding-left: 19px; /* default is 48px */
+	padding-left: 1.462em; /* default is 48px */
 	color: #1d1d1b;
 	text-decoration: none;
 	*display: inline;
@@ -26,9 +26,9 @@
 	&:before {
 		position: absolute;
 		left: 0;
-		top: -13px; /* default is 0 */
+		top: -0.9em; /* default is 0 */
 		display: inline-block;
-		margin: 0 5px 0 0;
+		margin: 0 0.385em 0 0;
 		font: 1.2em/1em 'Glyphicons Regular'; /* default is 24px/1em */
 		font-style: normal;
 		font-weight: normal;
