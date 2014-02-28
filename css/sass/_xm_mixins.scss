@@ -141,7 +141,10 @@
 
 /** field help **/
 @mixin xm_field_help() {
-	.xm_field_help { padding: 0.2em; color: #555; }
+	.xm_field_help {
+		padding: 0.2em; color: #555;
+		.glyphicons:before { color: #555; }
+	}
 }
 
 /** message formating **/
