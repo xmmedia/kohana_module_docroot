@@ -153,7 +153,7 @@
 		margin: 0.4em 0; list-style: none; font-weight: bold;
 		li { list-style: none; }
 		.error, .warning, .notice, .debug {
-			margin: 0.3em;
+			margin: 0.3em 0;
 			padding: 0.4em;
 			border: 1px solid darken(#dbdbff, 10%);
 			border-radius: 0.5em;
