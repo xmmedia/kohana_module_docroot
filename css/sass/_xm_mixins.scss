@@ -151,10 +151,10 @@
 @mixin xm_message($debug_msg_img: "url('message-debug.gif')") {
 	.xm_message {
 		margin: 0.4em 0; list-style: none; font-weight: bold;
-		li { list-style: none; }
+		ul { padding: 0.3em 0 0.2em 1.5em; list-style: none; }
 		.error, .warning, .notice, .debug {
 			margin: 0.3em 0;
-			padding: 0.4em;
+			padding: 0.4em 0.7em;
 			border: 1px solid darken(#dbdbff, 10%);
 			border-radius: 0.5em;
 			background-color: #dbdbff;
