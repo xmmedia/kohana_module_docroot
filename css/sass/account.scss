@@ -1,0 +1,13 @@
+/* form customizations for the user account/profile pages */
+.account_page_title { margin-top: 0; color: #444; }
+.account_form {
+	input { font-size: 1.2em; }
+	.field {
+		margin-top: 0.8em;
+		label:first-child { display: block; margin-bottom: 0.1em; color: #444; }
+	}
+	.buttons {
+		margin-top: 1em;
+		input, button { margin-right: 1em; }
+	}
+}
