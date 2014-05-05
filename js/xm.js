@@ -114,17 +114,13 @@ xm.model_select_change = function() {
 	window.location = '/dbadmin/' + $('#xm_model_select').val() + '/index';
 };
 
-if (typeof $.datepicker != 'undefined') {
-	// defaults for the date picker; these are necessary so the date picker within xm work
-	$.datepicker.setDefaults({
-		dateFormat: 'yy-mm-dd',
-		buttonImage: '/xm/images/calendar.gif',
-		buttonImageOnly: true
-	});
-}
-
 $(function() {
-	if (typeof $.datepicker != 'undefined') {
+	if (typeof $.datepicker !== 'undefined') {
+		// default for the date picker (the date format); these are necessary so the date picker within xm work
+		$.datepicker.setDefaults({
+			dateFormat: 'yy-mm-dd'
+		});
+
 		// adding the date picker to date fields
 		$('.js_xm_date_field-date').datepicker();
 	}
