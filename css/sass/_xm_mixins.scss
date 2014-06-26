@@ -148,7 +148,7 @@
 }
 
 /** message formating **/
-@mixin xm_message($debug_msg_img: "url('message-debug.gif')") {
+@mixin xm_message($debug_msg_img: url('/xm/images/message-debug.gif')) {
 	.xm_message {
 		margin: 0.4em 0; list-style: none; font-weight: bold;
 		ul { padding: 0.3em 0 0.2em 1.5em; list-style: none; }

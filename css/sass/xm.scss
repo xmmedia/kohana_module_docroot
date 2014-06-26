@@ -1,4 +1,4 @@
 @import "_xm_mixins";
 
-$debug_msg_img: image-url('message-debug.gif', false, false);
+$debug_msg_img: url('/xm/images/message-debug.gif');
 @include xm_all();
