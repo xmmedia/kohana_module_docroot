@@ -1,0 +1,151 @@
+/*! GLYPHICONS - www.glyphicons.com */
+
+// IMPORT FONTS
+@font-face {
+	font-family: 'Glyphicons Filetypes Regular';
+	src: url('/xm/css/fonts/glyphicons-filetypes-regular.eot');
+	src: url('/xm/css/fonts/glyphicons-filetypes-regular.eot?#iefix') format('embedded-opentype'),
+		url('/xm/css/fonts/glyphicons-filetypes-regular.woff') format('woff'),
+		url('/xm/css/fonts/glyphicons-filetypes-regular.ttf') format('truetype'),
+		url('/xm/css/fonts/glyphicons-filetypes-regular.svg#glyphicons_filetypesregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+// FONT ICONS
+.glyphicons.filetypes {
+	&:before {
+		font-family: 'Glyphicons Filetypes Regular';
+	}
+
+	&.txt { &:before { content:"\E001"; } }
+	&.doc { &:before { content:"\E002"; } }
+	&.rtf { &:before { content:"\E003"; } }
+	&.log { &:before { content:"\E004"; } }
+	&.tex { &:before { content:"\E005"; } }
+	&.msg { &:before { content:"\E006"; } }
+	&.text { &:before { content:"\E007"; } }
+	&.wpd { &:before { content:"\E008"; } }
+	&.wps { &:before { content:"\E009"; } }
+	&.docx { &:before { content:"\E010"; } }
+	&.page { &:before { content:"\E011"; } }
+	&.csv { &:before { content:"\E012"; } }
+	&.dat { &:before { content:"\E013"; } }
+	&.tar { &:before { content:"\E014"; } }
+	&.xml { &:before { content:"\E015"; } }
+	&.vcf { &:before { content:"\E016"; } }
+	&.pps { &:before { content:"\E017"; } }
+	&.key { &:before { content:"\E018"; } }
+	&.ppt { &:before { content:"\E019"; } }
+	&.pptx { &:before { content:"\E020"; } }
+	&.sdf { &:before { content:"\E021"; } }
+	&.gbr { &:before { content:"\E022"; } }
+	&.ged { &:before { content:"\E023"; } }
+	&.mp3 { &:before { content:"\E024"; } }
+	&.m4a { &:before { content:"\E025"; } }
+	&.waw { &:before { content:"\E026"; } }
+	&.wma { &:before { content:"\E027"; } }
+	&.mpa { &:before { content:"\E028"; } }
+	&.iff { &:before { content:"\E029"; } }
+	&.aif { &:before { content:"\E030"; } }
+	&.ra { &:before { content:"\E031"; } }
+	&.mid { &:before { content:"\E032"; } }
+	&.m3v { &:before { content:"\E033"; } }
+	&.e_3gp { &:before { content:"\E034"; } }
+	&.shf { &:before { content:"\E035"; } }
+	&.avi { &:before { content:"\E036"; } }
+	&.asx { &:before { content:"\E037"; } }
+	&.mp4 { &:before { content:"\E038"; } }
+	&.e_3g2 { &:before { content:"\E039"; } }
+	&.mpg { &:before { content:"\E040"; } }
+	&.asf { &:before { content:"\E041"; } }
+	&.vob { &:before { content:"\E042"; } }
+	&.wmv { &:before { content:"\E043"; } }
+	&.mov { &:before { content:"\E044"; } }
+	&.srt { &:before { content:"\E045"; } }
+	&.m4v { &:before { content:"\E046"; } }
+	&.flv { &:before { content:"\E047"; } }
+	&.rm { &:before { content:"\E048"; } }
+	&.png { &:before { content:"\E049"; } }
+	&.psd { &:before { content:"\E050"; } }
+	&.psp { &:before { content:"\E051"; } }
+	&.jpg { &:before { content:"\E052"; } }
+	&.tif { &:before { content:"\E053"; } }
+	&.tiff { &:before { content:"\E054"; } }
+	&.gif { &:before { content:"\E055"; } }
+	&.bmp { &:before { content:"\E056"; } }
+	&.tga { &:before { content:"\E057"; } }
+	&.thm { &:before { content:"\E058"; } }
+	&.yuv { &:before { content:"\E059"; } }
+	&.dds { &:before { content:"\E060"; } }
+	&.ai { &:before { content:"\E061"; } }
+	&.eps { &:before { content:"\E062"; } }
+	&.ps { &:before { content:"\E063"; } }
+	&.svg { &:before { content:"\E064"; } }
+	&.pdf { &:before { content:"\E065"; } }
+	&.pct { &:before { content:"\E066"; } }
+	&.indd { &:before { content:"\E067"; } }
+	&.xlr { &:before { content:"\E068"; } }
+	&.xls { &:before { content:"\E069"; } }
+	&.xlsx { &:before { content:"\E070"; } }
+	&.db { &:before { content:"\E071"; } }
+	&.dbf { &:before { content:"\E072"; } }
+	&.mdb { &:before { content:"\E073"; } }
+	&.pdb { &:before { content:"\E074"; } }
+	&.sql { &:before { content:"\E075"; } }
+	&.aacd { &:before { content:"\E076"; } }
+	&.app { &:before { content:"\E077"; } }
+	&.exe { &:before { content:"\E078"; } }
+	&.com { &:before { content:"\E079"; } }
+	&.bat { &:before { content:"\E080"; } }
+	&.apk { &:before { content:"\E081"; } }
+	&.jar { &:before { content:"\E082"; } }
+	&.hsf { &:before { content:"\E083"; } }
+	&.pif { &:before { content:"\E084"; } }
+	&.vb { &:before { content:"\E085"; } }
+	&.cgi { &:before { content:"\E086"; } }
+	&.css { &:before { content:"\E087"; } }
+	&.js { &:before { content:"\E088"; } }
+	&.php { &:before { content:"\E089"; } }
+	&.xhtml { &:before { content:"\E090"; } }
+	&.htm { &:before { content:"\E091"; } }
+	&.html { &:before { content:"\E092"; } }
+	&.asp { &:before { content:"\E093"; } }
+	&.cer { &:before { content:"\E094"; } }
+	&.jsp { &:before { content:"\E095"; } }
+	&.cfm { &:before { content:"\E096"; } }
+	&.aspx { &:before { content:"\E097"; } }
+	&.rss { &:before { content:"\E098"; } }
+	&.csr { &:before { content:"\E099"; } }
+	&.less { &:before { content:"\003C"; } }
+	&.otf { &:before { content:"\E101"; } }
+	&.ttf { &:before { content:"\E102"; } }
+	&.font { &:before { content:"\E103"; } }
+	&.fnt { &:before { content:"\E104"; } }
+	&.eot { &:before { content:"\E105"; } }
+	&.woff { &:before { content:"\E106"; } }
+	&.zip { &:before { content:"\E107"; } }
+	&.zipx { &:before { content:"\E108"; } }
+	&.rar { &:before { content:"\E109"; } }
+	&.targ { &:before { content:"\E110"; } }
+	&.sitx { &:before { content:"\E111"; } }
+	&.deb { &:before { content:"\E112"; } }
+	&.e_7z { &:before { content:"\E113"; } }
+	&.pkg { &:before { content:"\E114"; } }
+	&.rpm { &:before { content:"\E115"; } }
+	&.cbr { &:before { content:"\E116"; } }
+	&.gz { &:before { content:"\E117"; } }
+	&.dmg { &:before { content:"\E118"; } }
+	&.cue { &:before { content:"\E119"; } }
+	&.bin { &:before { content:"\E120"; } }
+	&.iso { &:before { content:"\E121"; } }
+	&.hdf { &:before { content:"\E122"; } }
+	&.vcd { &:before { content:"\E123"; } }
+	&.bak { &:before { content:"\E124"; } }
+	&.tmp { &:before { content:"\E125"; } }
+	&.ics { &:before { content:"\E126"; } }
+	&.msi { &:before { content:"\E127"; } }
+	&.cfg { &:before { content:"\E128"; } }
+	&.ini { &:before { content:"\E129"; } }
+	&.prf { &:before { content:"\E130"; } }
+}
