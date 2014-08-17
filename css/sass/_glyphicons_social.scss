@@ -1,0 +1,71 @@
+/*! GLYPHICONS - www.glyphicons.com */
+
+// IMPORT FONTS
+@font-face {
+	font-family: 'Glyphicons Social Regular';
+	src: url('/xm/css/fonts/glyphicons-social-regular.eot');
+	src: url('/xm/css/fonts/glyphicons-social-regular.eot?#iefix') format('embedded-opentype'),
+		url('/xm/css/fonts/glyphicons-social-regular.woff') format('woff'),
+		url('/xm/css/fonts/glyphicons-social-regular.ttf') format('truetype'),
+		url('/xm/css/fonts/glyphicons-social-regular.svg#glyphicons_socialregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+// FONT ICONS
+.glyphicons.social {
+	&:before {
+		font-family: 'Glyphicons Social Regular';
+	}
+
+	&.pinterest { &:before { content:"\E001"; } }
+	&.dropbox { &:before { content:"\E002"; } }
+	&.google_plus { &:before { content:"\E003"; } }
+	&.jolicloud { &:before { content:"\E004"; } }
+	&.yahoo { &:before { content:"\E005"; } }
+	&.blogger { &:before { content:"\E006"; } }
+	&.picasa { &:before { content:"\E007"; } }
+	&.amazon { &:before { content:"\E008"; } }
+	&.tumblr { &:before { content:"\E009"; } }
+	&.wordpress { &:before { content:"\E010"; } }
+	&.instapaper { &:before { content:"\E011"; } }
+	&.evernote { &:before { content:"\E012"; } }
+	&.xing { &:before { content:"\E013"; } }
+	&.zootool { &:before { content:"\E014"; } }
+	&.dribbble { &:before { content:"\E015"; } }
+	&.deviantart { &:before { content:"\E016"; } }
+	&.read_it_later { &:before { content:"\E017"; } }
+	&.linked_in { &:before { content:"\E018"; } }
+	&.forrst { &:before { content:"\E019"; } }
+	&.pinboard { &:before { content:"\E020"; } }
+	&.behance { &:before { content:"\E021"; } }
+	&.github { &:before { content:"\E022"; } }
+	&.youtube { &:before { content:"\E023"; } }
+	&.skitch { &:before { content:"\E024"; } }
+	&.foursquare { &:before { content:"\E025"; } }
+	&.quora { &:before { content:"\E026"; } }
+	&.badoo { &:before { content:"\E027"; } }
+	&.spotify { &:before { content:"\E028"; } }
+	&.stumbleupon { &:before { content:"\E029"; } }
+	&.readability { &:before { content:"\E030"; } }
+	&.facebook { &:before { content:"\E031"; } }
+	&.twitter { &:before { content:"\E032"; } }
+	&.instagram { &:before { content:"\E033"; } }
+	&.posterous_spaces { &:before { content:"\E034"; } }
+	&.vimeo { &:before { content:"\E035"; } }
+	&.flickr { &:before { content:"\E036"; } }
+	&.last_fm { &:before { content:"\E037"; } }
+	&.rss { &:before { content:"\E038"; } }
+	&.skype { &:before { content:"\E039"; } }
+	&.e-mail { &:before { content:"\E040"; } }
+	&.vine { &:before { content:"\E041"; } }
+	&.myspace { &:before { content:"\E042"; } }
+	&.goodreads { &:before { content:"\E043"; } }
+	&.apple { &:before { content:"\F8FF"; } }
+	&.windows { &:before { content:"\E045"; } }
+	&.yelp { &:before { content:"\E046"; } }
+	&.playstation { &:before { content:"\E047"; } }
+	&.xbox { &:before { content:"\E048"; } }
+	&.android { &:before { content:"\E049"; } }
+	&.ios { &:before { content:"\E050"; } }
+}
