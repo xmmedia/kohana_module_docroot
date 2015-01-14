@@ -54,7 +54,8 @@
 		.no_data { padding: 0 $padding; }
 
 		.error_status {
-			@extend %clearfix, %bottom_border;
+			@extend %clearfix;
+			@extend %bottom_border;
 			margin-bottom: $padding; padding: 0 $padding $padding 0;
 			a {
 				display: block;
@@ -72,7 +73,8 @@
 		}
 
 		.error_header {
-			@extend %clearfix, %bottom_border;
+			@extend %clearfix;
+			@extend %bottom_border;
 			padding: 0 $padding;
 		}
 		.error_details {
@@ -93,7 +95,8 @@
 
 		.error_details {
 			.tabs {
-				@extend %clearfix, %no_list;
+				@extend %clearfix;
+				@extend %no_list;
 				li { float: left; width: 1/9 * 100%; }
 				a {
 					display: block;
@@ -111,7 +114,8 @@
 			.details {
 				display: none; padding: $padding;
 				> div {
-					@extend %clearfix, %bottom_border;
+					@extend %clearfix;
+					@extend %bottom_border;
 					padding: $padding;
 					.label { float: left; width: 23%; min-width: 15em; font-weight: bold; }
 					.value {
@@ -125,7 +129,8 @@
 			.similar_errors {
 				@extend %no_list;
 				li {
-					@extend %clearfix, %bottom_border;
+					@extend %clearfix;
+					@extend %bottom_border;
 					padding: $padding;
 					&.header { font-weight: bold; }
 					.date { float: left; width: 20%; }
